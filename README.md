@@ -1,5 +1,24 @@
 # Laboratório de Test Smells - Gerenciador de Usuários
 
+## Entrega da refatoração
+
+- Original preservado: `test/userService.smelly.test.js`.
+- Suíte refatorada: `tests/userService.clean.test.js`.
+- Análise manual e decisões: [docs/analise.md](docs/analise.md).
+- Relatório: [output/pdf/relatorio-test-smells.pdf](output/pdf/relatorio-test-smells.pdf).
+- Evidências: `docs/eslint-inicial.txt`, `docs/eslint-inicial.png` e `docs/testes-finais.txt`.
+
+Execute `npm ci`, `npm test` e `npm run lint:clean`. O comando `npx eslint .`
+continua indicando os problemas do original, preservado para comparação.
+O ESLint 8.57.1 mantém compatibilidade com `.eslintrc.json`, exigido no roteiro;
+essa versão é legada e não tem mais suporte. Para um projeto em produção, migre
+para a configuração flat de uma versão suportada.
+
+Para gerar novamente o PDF: instale `reportlab`, `pymupdf` e `pillow` no Python e
+execute `py docs/gerar_relatorio.py --nome "Nome completo" --matricula "Matrícula"
+--disciplina "Disciplina"` (em uma única linha). Os dados não fornecidos ficam
+explicitamente identificados na capa.
+
 Este repositório serve como base para o trabalho prático sobre **Test Smells** na disciplina de Teste de Software. Ele contém uma suíte de testes que, apesar de passar, está repleta de "maus cheiros" (smells) que comprometem sua qualidade, manutenibilidade e eficácia.
 
 ## Contexto do Projeto
